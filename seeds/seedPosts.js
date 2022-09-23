@@ -2,12 +2,14 @@ const { Post } = require("../models");
 
 const postData = [
   {
-    title: "Blossoming Apricot",
-    contents: "LedyX",
-    username: "sdfj",
-    date: 1,
-    comment:
-      "Branches with pink apricot blossoms against a blue background.",
+    title: "OOP",
+    content: "OOP is Object Oriented Programming",
+    user_id: 1,
+  },
+  {
+    title: "MVC",
+    content: "Model View Controller",
+    user_id: 2,
   },
 ];
 
