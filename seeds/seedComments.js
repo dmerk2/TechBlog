@@ -1,9 +1,10 @@
-const { seedComments } = require("./index");
+const { Comment } = require("./index");
 
 const commentData = [
   {
-    title: "Great Post",
-    author: "Mike"
+    name: "Mike",
+    comment: "Nice Post",
+    date: "July 1, 2022"
   },
 ];
 
