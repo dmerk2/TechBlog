@@ -39,7 +39,15 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  
+  Post.create(req.body)
+  .then((post) => {
+    res.status(200).json(post);
+  })
+  .then((postIds) => res.status(200).json(postIds))
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 module.exports = router;

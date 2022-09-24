@@ -36,6 +36,4 @@ Post.init(
   }
 );
 
-const seedPosts = () => Post.bulkCreate(postData);
-
-module.exports = seedPosts;
+module.exports = Post;
