@@ -1,9 +1,10 @@
 const router = require("express").Router();
-const { Comment, Post } = require("../../models");
+const { Comment } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.get("/", (req, res) => {
   Comment.findAll({
-    include: [{ model: Comment, through: Post }],
+    include: [{ model: Comment }],
   })
     .then((dbCommentData) => {
       if (!dbCommentData) {
@@ -39,18 +40,26 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  Comment.create(req.body)
-    .then((comment) => {
-      res.status(200).json(comment);
-    })
-    .then((commentIds) => res.status(200).json(commentIds))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  if (req.session) {
+    Comment.create(req.body)
+      .then((comment) => {
+        res.status(200).json(comment);
+      })
+      .then((commentIds) => res.status(200).json(commentIds))
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  }
 });
 
-router.delete("/:id", (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
+  Comment.update({
+
+  })
+})
+
+router.delete("/:id", withAuth, (req, res) => {
   Comment.destroy({
     where: {
       id: req.params.id,
