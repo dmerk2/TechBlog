@@ -3,8 +3,8 @@ const { Comment } = require("../models");
 const commentData = [
   {
     name: "Mike",
-    comment: "Nice Post",
-    date: "July 1, 2022"
+    comment_text: "Nice Post",
+    post_id: 1
   },
 ];
 
