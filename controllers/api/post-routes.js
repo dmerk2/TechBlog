@@ -39,7 +39,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Post.create(req.body)
   .then((post) => {
     res.status(200).json(post);

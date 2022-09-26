@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../models');
+const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Using the withAuth function created in the utils folder
@@ -21,7 +21,7 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-console.log()
+
 router.get('/login', (req, res) => {
   // If the users session is still logged in, redirect them to the homepage
   if (req.session.logged_in) {

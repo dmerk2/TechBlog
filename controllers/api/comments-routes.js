@@ -24,7 +24,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    include: [Comment, Post],
+    include: [Comment],
   })
     .then((dbCommentData) => {
       if (!dbCommentData) {
@@ -52,12 +52,6 @@ router.post("/", (req, res) => {
       });
   }
 });
-
-router.put('/:id', withAuth, (req, res) => {
-  Comment.update({
-
-  })
-})
 
 router.delete("/:id", withAuth, (req, res) => {
   Comment.destroy({
