@@ -10,6 +10,8 @@ router.get('/', withAuth, async (req, res) => {
       order: [['name', 'ASC']],
     });
 
+    console.log(userData);
+
     const users = userData.map((project) => project.get({ plain: true }));
 
     res.render('homepage', {
@@ -22,18 +24,22 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// If the users session is still logged in, redirect them to the homepage
 router.get('/login', (req, res) => {
-  // If the users session is still logged in, redirect them to the homepage
+
+  console.log(req);
+  console.log(req.session);
+
   if (req.session.logged_in) {
     res.redirect('/');
-    return;
+    // return;
   }
 
   res.render('login');
 });
 
 router.get('/signup', (req, res) => {
-  res.render('signup');
+  res.render('login');
 })
 
 module.exports = router;
