@@ -54,5 +54,5 @@ Heroku URL: https://glacial-beach-66827.herokuapp.com/login
 ## Contributing
 
 ```md
-Daniel Merkin, Nick DiBartolo, Ferrell Cooper, John Bynum, Randy Einfalt, Cyrus Jalili-Khiabani
+Daniel Merkin
 ```
