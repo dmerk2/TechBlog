@@ -1,6 +1,6 @@
 # Tech Blog
 
-![License Badge](https://img.shields.io/github/license/dmerk2/Spaced-Out)
+![License Badge](https://img.shields.io/github/license/dmerk2/Tech-Blog)
 ## Table of Content
 - [User-Story](#user-story)
 - [Description](#description)
@@ -31,11 +31,10 @@
 7. Express.session
 8. MySQL 
 9. MySQL2
-10. Sequelize
+10. ORM - Sequelize
 11. Nodemon 
 12. Handlebars 
 13. .ENV
-14. SASS
 15. AGILE Framework
 16. MVC File Structure
 ```
@@ -54,5 +53,5 @@ Heroku URL: https://glacial-beach-66827.herokuapp.com/login
 ## Contributing
 
 ```md
-Daniel Merkin, Nick DiBartolo, Ferrell Cooper, John Bynum, Randy Einfalt, Cyrus Jalili-Khiabani
+Daniel Merkin
 ```

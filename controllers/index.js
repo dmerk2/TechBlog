@@ -1,14 +1,12 @@
 const router = require("express").Router();
+
 const apiRoutes = require("./api");
+const dasbhoardRoutes = require("./dashboard-routes");
 const homeRoutes = require("./home-routes");
-const dashboardRoutes = require("./dashboard-routes");
 
-router.use("/", homeRoutes);
+// these routes are prefixed with '/api'
 router.use("/api", apiRoutes);
-router.use("/dashboard-routes", dashboardRoutes);
-
-router.use("*", (req, res) => {
-  res.send("<h1>Wrong Route!</h1>");
-});
+router.use("/dashboard", dasbhoardRoutes);
+router.use("/home", homeRoutes);
 
 module.exports = router;

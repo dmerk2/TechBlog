@@ -1,11 +1,12 @@
-const router = require('express').Router();
-const userRoutes = require('./user-routes');
-const commentRoutes = require('./comments-routes');
-const postRoutes = require('./post-routes');
+const router = require("express").Router();
 
-// router.use('/', postRoutes)
-router.use('/post-routes', postRoutes);
-router.use('/user', userRoutes);
-router.use('/comments-routes', commentRoutes);
+const userRoutes = require("./user-routes");
+const postRoutes = require("./post-routes");
+const commentRoutes = require("./comment-routes");
+
+// these routes are prefixed with '/api'
+router.use("/users", userRoutes);
+router.use("/posts", postRoutes);
+router.use("/comments", commentRoutes);
 
 module.exports = router;
