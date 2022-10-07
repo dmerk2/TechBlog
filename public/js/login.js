@@ -11,6 +11,8 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
+    console.log(email,password)
+
     if (response.ok) {
       document.location.replace("/");
     } else {
@@ -32,6 +34,8 @@ const signupFormHandler = async (event) => {
       body: JSON.stringify({ username, email, password }),
       headers: { "Content-Type": "application/json" },
     });
+    
+    console.log(username,email,password)
 
     if (response.ok) {
       document.location.replace("/");
