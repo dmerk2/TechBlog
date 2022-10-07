@@ -115,12 +115,9 @@ router.get("/", withAuth, async (req, res) => {
 
 // If the users session is still logged in, redirect them to the homepage
 router.get("/login", (req, res) => {
-  console.log(req);
-  console.log(req.session);
-
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect("/");
-    // return;
+    return;
   }
 
   res.render("login");

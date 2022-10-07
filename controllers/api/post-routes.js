@@ -50,7 +50,19 @@ router.post("/", withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
+router.post("/", (req, res) => {
+  if (req.session) {
+    Comment.create(req.body)
+      .then((comment) => {
+        res.status(200).json(comment);
+      })
+      .then((commentIds) => res.status(200).json(commentIds))
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  }
+});
 router.delete("/:id", withAuth, (req, res) => {
   Post.destroy({
     where: {
