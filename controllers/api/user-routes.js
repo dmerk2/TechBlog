@@ -209,17 +209,16 @@ router.post("/", (req, res) => {
 
     const { id, username } = dbUserData.dataValues;
 
-    req.session
-      .save(() => {
-        req.session.user_id = id;
-        req.session.username = username;
-        req.session.loggedIn = true;
-        res.json(dbUserData);
-      })
-      // .catch((err) => {
-      //   console.log(err);
-      //   res.status(500).json(err);
-      // });
+    req.session.save(() => {
+      req.session.user_id = id;
+      req.session.username = username;
+      req.session.loggedIn = true;
+      res.json(dbUserData);
+    });
+    // .catch((err) => {
+    //   console.log(err);
+    //   res.status(500).json(err);
+    // });
   });
 });
 
