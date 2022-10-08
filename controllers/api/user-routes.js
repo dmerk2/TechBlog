@@ -15,6 +15,22 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/:id", withAuth, (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((data) => {
+      console.log(data);
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);

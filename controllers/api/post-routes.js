@@ -12,19 +12,15 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
     },
-    include: [Post],
   })
-    .then((dbPostData) => {
-      if (!dbPostData) {
-        res.status(500).json({ message: "No post!" });
-        return;
-      }
-      res.json(dbPostData);
+    .then((data) => {
+      console.log(data);
+      res.status(200).json(data);
     })
     .catch((err) => {
       console.log(err);
