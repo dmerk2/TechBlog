@@ -2,17 +2,10 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+// GET /api/post
 router.get("/", (req, res) => {
-  Post.findAll({
-    include: [{ model: Post }],
-  })
-    .then((dbPostData) => {
-      if (!dbPostData) {
-        res.status(500).json({ message: "No post!" });
-        return;
-      }
-      res.json(dbPostData);
-    })
+  Post.findAll()
+    .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
