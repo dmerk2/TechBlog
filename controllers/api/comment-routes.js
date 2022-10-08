@@ -2,23 +2,6 @@ const router = require("express").Router();
 const { Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// router.get("/", (req, res) => {
-//   Comment.findAll({
-//     include: [{ model: Comment }],
-//   })
-//     .then((dbCommentData) => {
-//       if (!dbCommentData) {
-//         res.status(500).json({ message: "No Comments" });
-//         return;
-//       }
-//       res.json(dbCommentData);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
-
 // GET /api/comments
 router.get("/", (req, res) => {
   Comment.findAll()

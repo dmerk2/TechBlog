@@ -43,6 +43,7 @@ router.post("/", withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.post("/", (req, res) => {
   if (req.session) {
     Comment.create(req.body)
@@ -56,6 +57,7 @@ router.post("/", (req, res) => {
       });
   }
 });
+
 router.delete("/:id", withAuth, (req, res) => {
   Post.destroy({
     where: {

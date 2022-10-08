@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render("homepage", {
-      projects,
+      posts,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
 
 router.get("/post/:id", async (req, res) => {
   try {
-    const projectData = await Post.findByPk(req.params.id, {
+    const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -38,10 +38,10 @@ router.get("/post/:id", async (req, res) => {
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const posts = postData.get({ plain: true });
 
-    res.render("posts", {
-      ...project,
+    res.render("post", {
+      ...posts,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -55,7 +55,7 @@ router.get("/profile", withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: Project }],
+      include: [{ model: User }],
     });
 
     const user = userData.get({ plain: true });
@@ -72,7 +72,7 @@ router.get("/profile", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/profile");
+    res.redirect("/");
     return;
   }
 
