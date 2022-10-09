@@ -85,7 +85,7 @@ async function loginFormHandler(event) {
 }
 
 document
-  .querySelector("#login-form")
+  .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);
 
   // Signup form
@@ -117,7 +117,7 @@ async function signupFormHandler(event) {
 }
 
 document
-  .querySelector("#signup-form")
+  .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
 
 
