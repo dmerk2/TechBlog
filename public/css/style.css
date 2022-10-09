@@ -1,5 +1,15 @@
+:root{
+  --primary-color: forestgreen;
+  --primary-font: cursive;
+}
+
+h2 {
+  color: var(--primary-color);
+}
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+  font-family: var(--primary-font);
 }
 
 .no-button {
@@ -17,8 +27,12 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
+#navText {
+  color: var(--primary-color);
+}
+
+/* .dollar-amount {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
-}
+} */
