@@ -1,0 +1,57 @@
+{{!-- <div class="text-center">
+  <h2>{{user.id}}</h2>
+  <p>{{{get_emoji}}}</p>
+  <p>{{content}}</p>
+  <p>Created by {{user.id}}</p>
+  <p>
+    <span class="dollar-amount">{{format_amount needed_funding}}</span>
+    needed
+  </p>
+  <p>
+    <button class="btn btn-primary">Comment!</button>
+  </p>
+</div> --}}
+<div class="row">
+  <div class="col-auto">
+    <h2>Check out what's new!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Leave a comment!</h3>
+
+    <form class="form new-comment-form">
+      <div class="form-group">
+        <label for="comment-name">Blog title:</label>
+        <input class="form-input" type="text" id="comment-name" name="project-name" />
+      </div>
+      <div class="form-group">
+        <label for="comment-desc">Comment:</label>
+        <textarea class="form-input" id="comment-desc" name="comment-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if comments.length}}
+    <div class="col-md-6 comment-list">
+      <h3>Current Comments:</h3>
+
+      {{#each comments as |comment|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a href="/comment/{{comment.comment_text}}">{{comment.comment_text}}</a></h4>
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-sm btn-danger" data-id="{{comment.comment_text}}">DELETE</button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>

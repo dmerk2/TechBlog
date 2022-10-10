@@ -1,3 +1,4 @@
+// New Post
 const newPost = async (e) => {
   e.preventDefault();
 
@@ -13,9 +14,9 @@ const newPost = async (e) => {
     });
 
     if (response.ok) {
-      document.location.replace("/post");
+      document.location.replace("/api/post");
     } else {
-      alert("Failed to post new content   !");
+      alert("Failed to post new content");
     }
   }
 };
