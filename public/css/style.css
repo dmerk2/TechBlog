@@ -31,8 +31,13 @@ header, .project:not(:last-child) {
   color: var(--primary-color);
 }
 
-/* .dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-} */
+#button:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 2px grey;
+  opacity: 0.75;
+}
+
+a:hover {
+  cursor: pointer;
+  color: var(--primary-font)
+}
