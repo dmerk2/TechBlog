@@ -2,7 +2,7 @@
   <div class="card-header  flex-row justify-space-between">
     <h2>
       <a href="/post/{{post.id}}">
-        <div class="col-8">{{post.post_id}}</div>
+        <div class="col-8">{{post.title}}</div>
       </a>
     </h2>
     {{!-- Not showing user or date --}}
@@ -10,7 +10,7 @@
     </div>
   </div>
   <p class="card-body">
-    {{post.comment}}
+    {{post.content}}
   </p>
 </div>
 <input type="hidden" name="post-id" value="{{post.id}}" />

@@ -38,12 +38,11 @@ router.get("/post/:id", async (req, res) => {
       ],
     });
 
-    const posts = postData.get({ plain: true });
+    const post = postData.get({ plain: true });
 
-    res.render("post", {
-      ...posts,
-      logged_in: req.session.logged_in,
-    });
+    // Retrieve post to view
+    res.render("post", { post });
+    // logged_in: req.session.logged_in, ???
   } catch (err) {
     res.status(500).json(err);
   }
