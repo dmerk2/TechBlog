@@ -22,4 +22,4 @@ const newComment = async (e) => {
 
 document
   .querySelector(".new-comment-form")
-  .addEventListener("click", newComment);
+  .addEventListener("submit", newComment);

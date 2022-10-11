@@ -5,8 +5,8 @@
         <div class="col-8">{{post.title}}</div>
       </a>
     </h2>
-    {{!-- Not showing user or date --}}
-    <div class="col-3">Posted by {{post.user_id}} on {{post.dateCreated}}
+    {{!-- Not showing user date because it is empty object --}}
+    <div class="col-3">Posted by {{post.user_id}} on {{post.created_at}}
     </div>
   </div>
   <p class="card-body">
@@ -15,7 +15,7 @@
 </div>
 <input type="hidden" name="post-id" value="{{post.id}}" />
 <div class="card">
-  <div class="card-header"></div>
+  <h2 class="card-header">{{post.id}}<br>{{post.content}}</h2>
   <form class="card-body" class="new-comment-form">
     <p class="form-label">Comment:</p>
     <textarea class="form-input" id="comment-body" name="comment-body"></textarea>
