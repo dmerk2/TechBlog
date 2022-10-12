@@ -1,6 +1,6 @@
 // New Post
-const newPost = async (e) => {
-  e.preventDefault();
+const newPost = async (event) => {
+  event.preventDefault();
 
   const post = document.querySelector("#post_text").value.trim();
 
@@ -21,6 +21,4 @@ const newPost = async (e) => {
   }
 };
 
-document
-  .querySelector(".new-post-form")
-  .addEventListener("submit", newPost);
+document.querySelector(".card-body").addEventListener("submit", newPost);

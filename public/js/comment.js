@@ -20,6 +20,4 @@ const newComment = async (e) => {
   }
 };
 
-document
-  .querySelector(".new-comment-form")
-  .addEventListener("submit", newComment);
+document.querySelector(".card-body").addEventListener("submit", newComment);
